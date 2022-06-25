@@ -1,0 +1,25 @@
+
+Sat Jun 25 13:02:44 2022 : _______START_________
+Sat Jun 25 13:02:44 2022 : Otwarto dwa pliki: (1) zad/file_1_A (2) zad/file_1_B
+Sat Jun 25 13:02:44 2022 : Rozpoczêto analizê.
+Sat Jun 25 13:02:44 2022 : Zakoñczono.
+Sat Jun 25 13:02:44 2022 : Wyniki: Iloœæ porównywanych bitów: 0; Ró¿nica w bitach: 0; BER: 0.000000%; Czas: 0 ms
+Sat Jun 25 13:02:44 2022 : Plik zad/file_1_A zamkniêty.
+Sat Jun 25 13:02:44 2022 : Plik zad/file_1_B zamkniêty.
+Sat Jun 25 13:02:44 2022 : _______STOP_________
+Sat Jun 25 13:21:58 2022 : _______START_________
+Sat Jun 25 13:21:58 2022 : Otwarto dwa pliki: (1) zad/file_2_A (2) zad/file_2_B
+Sat Jun 25 13:21:58 2022 : Rozpoczêto analizê.
+Sat Jun 25 13:21:58 2022 : Zakoñczono.
+Sat Jun 25 13:21:58 2022 : Wyniki: Iloœæ porównywanych bitów: 48; Ró¿nica w bitach: 10; BER: 1.250000%; Czas: 0 ms
+Sat Jun 25 13:21:58 2022 : Plik zad/file_2_A zamkniêty.
+Sat Jun 25 13:21:58 2022 : Plik zad/file_2_B zamkniêty.
+Sat Jun 25 13:21:58 2022 : _______STOP_________
+Sat Jun 25 13:22:17 2022 : _______START_________
+Sat Jun 25 13:22:17 2022 : Otwarto dwa pliki: (1) zad/file_3_A (2) zad/file_3_B
+Sat Jun 25 13:22:17 2022 : Rozpoczêto analizê.
+Sat Jun 25 13:22:31 2022 : Zakoñczono.
+Sat Jun 25 13:22:31 2022 : Wyniki: Iloœæ porównywanych bitów: 8; Ró¿nica w bitach: 2; BER: 0.000000%; Czas: 14300 ms
+Sat Jun 25 13:22:31 2022 : Plik zad/file_3_A zamkniêty.
+Sat Jun 25 13:22:31 2022 : Plik zad/file_3_B zamkniêty.
+Sat Jun 25 13:22:31 2022 : _______STOP_________
