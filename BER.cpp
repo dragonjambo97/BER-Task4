@@ -24,7 +24,7 @@ tuple<int, int, float, long> makeComparison(fstream &file_A, fstream &file_B){
     string bitSetA, bitSetB;
 
     createLog("Rozpoczêto analizê.");	//wpis do pliku log
-    auto start = chrono::high_resolution_clock::now();
+    auto start = chrono::high_resolution_clock::now(); //rozpoczzêcie pomiaru czasu
 
     while(!file_A.eof()){
 
@@ -46,9 +46,9 @@ tuple<int, int, float, long> makeComparison(fstream &file_A, fstream &file_B){
     sizeInBytes -= 1;
     ber = float(roznica) / (sizeInBytes * 8.) * 100.;
 
-    auto stop = chrono::high_resolution_clock::now();	//wpis do pliku log
+    auto stop = chrono::high_resolution_clock::now();	//wpis do pliku log //zakonczenie pomiaru czasu
     createLog("Zakoñczono.");
-    auto duration = chrono::duration_cast<chrono::milliseconds>(stop - start);
+    auto duration = chrono::duration_cast<chrono::milliseconds>(stop - start); //obliczanie czasu 
 
     tuple<int, int, float, long> results = make_tuple(porownanie, roznica, ber, duration.count());
     return results;
