@@ -8,7 +8,7 @@ using namespace std;
 
 void createLog(string message){
     fstream logFile;
-    logFile.open("log.txt", ios::app);
+    logFile.open("log.txt", ios::app);	//tworzenie pliku log
     time_t t = time(0);
     string dt = ctime(&t);
     logFile << endl << dt.substr(0, dt.length()-1) << " : " << message;
@@ -17,13 +17,13 @@ void createLog(string message){
 
 tuple<int, int, float, long> makeComparison(fstream &file_A, fstream &file_B){
 
-    int roznica = 0, porownanie = 0;
+    int roznica = 0, porownanie = 0;	
     long sizeInBytes = 0L;
     float ber = 0.;
     char a, b;
     string bitSetA, bitSetB;
 
-    createLog("Rozpoczêto analizê.");
+    createLog("Rozpoczêto analizê.");	//wpis do pliku log
     auto start = chrono::high_resolution_clock::now();
 
     while(!file_A.eof()){
@@ -46,7 +46,7 @@ tuple<int, int, float, long> makeComparison(fstream &file_A, fstream &file_B){
     sizeInBytes -= 1;
     ber = float(roznica) / (sizeInBytes * 8.) * 100.;
 
-    auto stop = chrono::high_resolution_clock::now();
+    auto stop = chrono::high_resolution_clock::now();	//wpis do pliku log
     createLog("Zakoñczono.");
     auto duration = chrono::duration_cast<chrono::milliseconds>(stop - start);
 
@@ -55,10 +55,10 @@ tuple<int, int, float, long> makeComparison(fstream &file_A, fstream &file_B){
 }
 
 int main(int argc, char** argv){
-    createLog("_______START_________");
+    createLog("_______START_________"); //wpis do pliku log
 
     if(argc != 3) {
-        createLog("Z³a liczba argumentów (" + to_string(argc-1) + ") - potrzebne argumenty: 2.");
+        createLog("Z³a liczba argumentów (" + to_string(argc-1) + ") - potrzebne argumenty: 2."); //wpis do pliku log
         createLog("_______STOP_________");
         return 0;
     }
@@ -67,16 +67,16 @@ int main(int argc, char** argv){
     file_A.open(argv[1]);
     file_B.open(argv[2]);
     if(!file_A.is_open() || !file_B.is_open()){
-        createLog("Nie mo¿na otworzyæ pliku.");
-        createLog("_______STOP_________");
+        createLog("Nie mo¿na otworzyæ pliku."); //wpis do pliku log
+        createLog("_______STOP_________"); //wpis do pliku log
         return 0;
     } else {
-        createLog((string) "Otwarto dwa pliki: (1) " + argv[1] + " (2) " + argv[2]);
+        createLog((string) "Otwarto dwa pliki: (1) " + argv[1] + " (2) " + argv[2]); //wpis do pliku log
     }
 
     tuple<int, int, float, long> results = makeComparison(file_A, file_B);
 
-    string resultMsg = "Wyniki: Iloœæ porównanych bitów: " + to_string(get<0>(results)) + 
+    string resultMsg = "Wyniki: Iloœæ porównanych bitów: " + to_string(get<0>(results)) +  //wpis do pliku log
                         "; Ró¿nica w bitach: " + to_string(get<1>(results)) + 
                         "; BER: " + to_string(get<2>(results)) + "%" + 
                         "; Czas: " + to_string(get<3>(results)) + " ms";
@@ -84,11 +84,11 @@ int main(int argc, char** argv){
     cout << resultMsg << endl;
 
     file_A.close();
-    createLog((string) "Plik " + argv[1] + " zamkniêty.");
+    createLog((string) "Plik " + argv[1] + " zamkniêty."); //wpis do pliku log
     file_B.close();
-    createLog((string) "Plik " + argv[2] + " zamkniêty.");
+    createLog((string) "Plik " + argv[2] + " zamkniêty."); //wpis do pliku log
 
-    createLog("_______ STOP_________");
+    createLog("_______ STOP_________"); //wpis do pliku log
     return 0;
 }
 
