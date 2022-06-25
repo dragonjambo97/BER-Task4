@@ -37,7 +37,7 @@ tuple<int, int, float, long> makeComparison(fstream &file_A, fstream &file_B){
             bitSetB = bitset<8>(b).to_string();
 
             for(int i = 7; i >= 0; i--){
-                if(bitSetA[i] != bitSetB[i]) diff++;
+                if(bitSetA[i] != bitSetB[i]) roznica++;
                 porownanie++;
             }
         }
