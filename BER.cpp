@@ -6,6 +6,15 @@
 #include <bitset>
 using namespace std;
 
+void createLog(string message){
+    fstream logFile;
+    logFile.open("log.txt", ios::app);
+    time_t t = time(0);
+    string dt = ctime(&t);
+    logFile << endl << dt.substr(0, dt.length()-1) << " : " << message;
+    logFile.close();
+}
+
 tuple<int, int, float, long> makeComparison(fstream &file_A, fstream &file_B){
 
     int roznica = 0, porownanie = 0;
