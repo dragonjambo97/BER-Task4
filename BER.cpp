@@ -54,3 +54,41 @@ tuple<int, int, float, long> makeComparison(fstream &file_A, fstream &file_B){
     return results;
 }
 
+int main(int argc, char** argv){
+    createLog("_______START_________");
+
+    if(argc != 3) {
+        createLog("Z³a liczba argumentów (" + to_string(argc-1) + ") - potrzebne argumenty: 2.");
+        createLog("_______STOP_________");
+        return 0;
+    }
+
+    fstream file_A, file_B;
+    file_A.open(argv[1]);
+    file_B.open(argv[2]);
+    if(!file_A.is_open() || !file_B.is_open()){
+        createLog("Nie mo¿na otworzyæ pliku.");
+        createLog("_______STOP_________");
+        return 0;
+    } else {
+        createLog((string) "Otwarto dwa pliki: (1) " + argv[1] + " (2) " + argv[2]);
+    }
+
+    tuple<int, int, float, long> results = makeComparison(file_A, file_B);
+
+    string resultMsg = "Wyniki: Iloœæ porównanych bitów: " + to_string(get<0>(results)) + 
+                        "; Ró¿nica w bitach: " + to_string(get<1>(results)) + 
+                        "; BER: " + to_string(get<2>(results)) + "%" + 
+                        "; Czas: " + to_string(get<3>(results)) + " ms";
+    createLog(resultMsg);
+    cout << resultMsg << endl;
+
+    file_A.close();
+    createLog((string) "Plik " + argv[1] + " zamkniêty.");
+    file_B.close();
+    createLog((string) "Plik " + argv[2] + " zamkniêty.");
+
+    createLog("_______ STOP_________");
+    return 0;
+}
+
